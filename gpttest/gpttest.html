@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study with us!</title>
+    <link rel="stylesheet" href="gpttest.css">
+</head>
+
+<body>
+    <header>
+        <h1>Study with us !</h1>
+    </header>
+
+    <main>
+        <div id="profile-menu-container">
+            <aside id="profile-section">
+                <img src="blue.jpg" alt="내 프로필 사진" id="profile-pic">
+                <p id="username">전효정</p>
+                <p id="myself">안녕하세요 자기소개 입니다</p>
+            </aside>
+    
+            <section id="menu-section">
+                <h2>메뉴</h2>
+                <ul id="menu-list">
+                    <li>캘린더</li>
+                    <li>자료 공유</li>
+                    <li>과제/목표</li>
+                    <li>게시판</li>
+                    <li>학습 진도 및 성취도 추적</li>
+                </ul>
+            </section>
+        </div>
+
+    <section id="my-study-groups">
+        <div class="study-groups-container" id="study-groups-container">
+            <div class="study-group">
+                <span class="group-name">스터디 A</span>
+                <button class="close-btn">X</button>
+            </div>
+            <div class="study-group">
+                <span class="group-name">스터디 B</span>
+                <button class="close-btn">X</button>
+            </div>
+            <div class="study-group">
+                <span class="group-name">스터디 C</span>
+                <button class="close-btn">X</button>
+            </div>
+            <!-- 추가 아이콘 -->
+            <div class="study-group add-group" id="add-group-btn">+</div>
+        </div>
+    </section>
+
+    <!-- 확인 창 -->
+    <div id="confirmation-box" class="confirmation-box">
+        <p>스터디 그룹을 나가시겠습니까?</p>
+        <button id="confirm-yes">네</button>
+        <button id="confirm-no">아니요</button>
+    </div>
+</main>
+
+    <script>
+        // 스터디 그룹 삭제 기능
+        const studyGroupsContainer = document.getElementById('study-groups-container');
+        const confirmationBox = document.getElementById('confirmation-box');
+        let groupToDelete = null;
+
+        // X 버튼 클릭 시
+        document.querySelectorAll('.close-btn').forEach(btn => {
+            btn.addEventListener('click', function (event) {
+                event.stopPropagation();  // 부모의 클릭 이벤트로 전파되지 않도록
+                groupToDelete = this.parentElement;  // 클릭한 그룹 저장
+                confirmationBox.style.display = 'block';  // 확인 창 표시
+            });
+        });
+
+        // "네" 클릭 시 그룹 삭제
+        document.getElementById('confirm-yes').addEventListener('click', function () {
+            if (groupToDelete) {
+                groupToDelete.remove();  // 그룹 삭제
+                groupToDelete = null;
+                confirmationBox.style.display = 'none';  // 확인 창 숨김
+            }
+        });
+
+        // "아니요" 클릭 시 확인 창 닫기
+        document.getElementById('confirm-no').addEventListener('click', function () {
+            groupToDelete = null;  // 초기화
+            confirmationBox.style.display = 'none';  // 확인 창 숨김
+        });
+
+        // 스터디 그룹 추가 기능
+        const addGroupBtn = document.getElementById('add-group-btn');
+        let studyGroupCount = 3;
+
+        addGroupBtn.addEventListener('click', function () {
+            studyGroupCount++;
+            const newGroup = document.createElement('div');
+            newGroup.classList.add('study-group');
+            newGroup.innerHTML = `<span class="group-name">스터디 ${String.fromCharCode(64 + studyGroupCount)}</span> <button class="close-btn">X</button>`;
+
+            // X 버튼 클릭 이벤트 추가
+            const closeButton = newGroup.querySelector('.close-btn');
+            closeButton.addEventListener('click', function (event) {
+                event.stopPropagation();
+                groupToDelete = newGroup;
+                confirmationBox.style.display = 'block';
+            });
+
+            studyGroupsContainer.insertBefore(newGroup, addGroupBtn);  // 추가 버튼 앞에 새로운 그룹 추가
+        });
+
+        // 그룹명 수정 기능 (더블클릭)
+        document.querySelectorAll('.group-name').forEach(groupName => {
+            groupName.addEventListener('dblclick', function () {
+                const originalText = this.textContent;
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.value = originalText;
+                input.classList.add('edit-input');
+                this.replaceWith(input);
+                input.focus();
+
+                input.addEventListener('blur', function () {
+                    const newGroupName = this.value || originalText;
+                    const span = document.createElement('span');
+                    span.classList.add('group-name');
+                    span.textContent = newGroupName;
+                    this.replaceWith(span);
+
+                    // 다시 더블클릭 이벤트 연결
+                    span.addEventListener('dblclick', function () {
+                        groupName.dispatchEvent(new Event('dblclick'));
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
