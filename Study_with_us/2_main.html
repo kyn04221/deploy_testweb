@@ -100,35 +100,16 @@
     
         // 스터디 그룹 추가 기능
         const addGroupBtn = document.getElementById('add-group-btn');
-        let studyGroupCount = 3;
-    
-        // 새로운 그룹 추가 확인 창
         const addGroupConfirmationBox = document.getElementById('add-group-confirmation-box');
-    
+        
         addGroupBtn.addEventListener('click', function () {
             addGroupConfirmationBox.style.display = 'block';  // 확인 창 표시
         });
     
-        // "네" 클릭 시 그룹 추가
+        // "네" 클릭 시 그룹 추가 및 페이지 이동
         document.getElementById('add-group-yes').addEventListener('click', function () {
-            studyGroupCount++;
-            const newGroup = document.createElement('div');
-            newGroup.classList.add('study-group');
-            newGroup.innerHTML = `<span class="group-name">스터디 ${String.fromCharCode(64 + studyGroupCount)}</span> <button class="close-btn">X</button>`;
-    
-            // X 버튼 클릭 이벤트 추가
-            const closeButton = newGroup.querySelector('.close-btn');
-            closeButton.addEventListener('click', function (event) {
-                event.stopPropagation();
-                groupToDelete = newGroup;
-                confirmationBox.style.display = 'block';
-            });
-    
-            studyGroupsContainer.insertBefore(newGroup, addGroupBtn);  // 추가 버튼 앞에 새로운 그룹 추가
             addGroupConfirmationBox.style.display = 'none';  // 확인 창 숨김
-    
-            // 그룹 박스 더블클릭 시 페이지 이동 이벤트 추가
-            addGroupDoubleClickEvent(newGroup);
+            window.location.href = "4_MadeStudy.html";  // 페이지 이동
         });
     
         // "아니요" 클릭 시 확인 창 닫기
@@ -174,7 +155,6 @@
             });
         }
     </script>
-    
 </body>
 
 </html>
