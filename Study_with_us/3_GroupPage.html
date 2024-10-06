@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스터디 메인페이지</title>
+    <link rel="stylesheet" href="3_GroupPage.css">
+</head>
+<body>
+    <header>
+        <h1>스터디 그룹</h1>
+    </header>
+    
+    <main>
+
+        <section id="left-section">
+            <div id="profile-section">
+                <img src="blue.jpg" alt="프로필 사진" id="profile-pic">
+                <p id="username">전효정</p>
+                <button id="join-button">참여하기</button>
+            </div>
+            
+            <div id="members-section">
+                <h2>스터디 멤버들</h2>
+                <div id="online-members">
+                    <h3>온라인</h3>
+                    <div class="member">
+                        가나다 <span class="status-dot online"></span>
+                    </div>
+                    <div class="member">
+                        라마바 <span class="status-dot online"></span> 
+                    </div>
+                </div>
+                
+                <div id="offline-members">
+                    <h3>오프라인</h3>
+                    <div class="member">
+                        사아자 <span class="status-dot offline"></span>
+                    </div>
+                    <div class="member">
+                        차카타 <span class="status-dot offline"></span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section id="right-section">
+            <div id="notice-board">
+                <h2>공지사항</h2>
+                <p>여기에 공지사항 내용을 입력하세요.</p>
+            </div>
+            
+            <div id="bulletin-board">
+                <h2>게시판</h2>
+                <p>여기에 게시판 내용을 입력하세요.</p>
+            </div>
+        </section>
+
+        <script>
+            window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const groupName = params.get('groupName');
+        if (groupName) {
+            document.querySelector('header h1').textContent = groupName;
+        }
+    };
+        </script>
+    </main>
+</body>
+</html>
+
+
