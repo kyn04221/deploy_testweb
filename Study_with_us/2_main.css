@@ -271,3 +271,36 @@ main {
 }
 
 
+/* 새스터디 그룹 */
+
+.confirmation-box {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* 다른 요소 위에 표시 */
+}
+
+.confirmation-box p {
+    margin-bottom: 10px;
+}
+
+.confirmation-box button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.confirmation-box button:hover {
+    background-color: #0056b3; /* 호버 시 색상 변화 */
+}
