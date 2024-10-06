@@ -13,8 +13,6 @@
         <h1>Study with us !</h1>
     </header>
 
-   
-
     <main>
 
         <div id="profile-menu-container">
@@ -35,7 +33,6 @@
                 </ul>
             </section>
         </div>
-
 
         <section id="my-study-groups">
             <div id="create-study-group">
@@ -61,7 +58,6 @@
     </main>
 
     <script>
-        // 버튼 클릭 시 동작 추가
         document.getElementById('create-group-btn').addEventListener('click', function () {
             const groupName = document.getElementById('group-name').value;
             const groupPurpose = document.getElementById('group-purpose').value;
@@ -70,8 +66,19 @@
             const groupSchedule = document.getElementById('group-schedule').value;
 
             if (groupName && groupPurpose && groupDuration && maxMembers && groupSchedule) {
-                alert(`스터디 그룹 "${groupName}"가 성공적으로 생성되었습니다!`);
-                // 여기에서 추가적인 로직을 추가하여 그룹 생성 후 이동 등을 처리할 수 있습니다.
+                // 스터디 그룹 정보를 로컬 스토리지에 저장
+                const studyGroup = {
+                    name: groupName,
+                    purpose: groupPurpose,
+                    duration: groupDuration,
+                    maxMembers: maxMembers,
+                    schedule: groupSchedule
+                };
+                
+                localStorage.setItem('newStudyGroup', JSON.stringify(studyGroup));
+
+                // 2_main.html 페이지로 이동
+                window.location.href = "2_main.html";
             } else {
                 alert('모든 필드를 입력해주세요.');
             }

@@ -69,6 +69,36 @@
     </main>
 
     <script>
+        // 페이지 로드 시 로컬 스토리지에서 새 스터디 그룹 추가
+        window.addEventListener('DOMContentLoaded', function () {
+            const newStudyGroup = localStorage.getItem('newStudyGroup');
+            if (newStudyGroup) {
+                const groupData = JSON.parse(newStudyGroup);
+
+                const newGroup = document.createElement('div');
+                newGroup.classList.add('study-group');
+                newGroup.innerHTML = `<span class="group-name">${groupData.name}</span> <button class="close-btn">X</button>`;
+
+                // X 버튼 클릭 이벤트 추가
+                const closeButton = newGroup.querySelector('.close-btn');
+                closeButton.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                    newGroup.remove();  // 그룹 삭제
+                });
+
+                // 새로운 그룹을 study-groups-container에 추가
+                const studyGroupsContainer = document.getElementById('study-groups-container');
+                const addGroupBtn = document.getElementById('add-group-btn');
+                studyGroupsContainer.insertBefore(newGroup, addGroupBtn);  // 추가 버튼 앞에 새로운 그룹 추가
+
+                // 추가된 그룹에도 더블클릭 이벤트 추가
+                addGroupDoubleClickEvent(newGroup);
+
+                // 추가 후 로컬 스토리지에서 삭제 (중복 방지)
+                localStorage.removeItem('newStudyGroup');
+            }
+        });
+
         // 스터디 그룹 삭제 기능
         const studyGroupsContainer = document.getElementById('study-groups-container');
         const confirmationBox = document.getElementById('confirmation-box');
