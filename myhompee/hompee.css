@@ -13,17 +13,16 @@ body {
 
 
 header {
-
-    width: 800px;
+    display: flex;
+    /* width: 800px; */
     /* text-align: center; 타이틀을 중앙 정렬 */
     margin-top: 20px; 
     margin-bottom: 20px; /*타이틀과 본문 사이 간격*/
     display: flex;
     justify-content: left;
     align-items: center;
-    justify-content: left;
-    margin-left: 0%;
-    padding-left: 20%;
+    margin-left: 5%;
+    padding-left: 30px;
     margin-right: 0%;
 }
 
@@ -39,6 +38,7 @@ h1 {
     border-radius: 8px; /* 둥근 모서리 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
     display: inline-block; /*텍스트가 가운데에 고정되도록 inline-block 추가*/
+    
 }
 
 .container {
@@ -101,7 +101,7 @@ main {
     padding-top: 0px;
     display: flex;
     flex-direction: column;
-    margin-right: 25px;
+    margin-right: 20px;
     max-width: 800px;
     
 }
@@ -213,6 +213,26 @@ footer {
 
 @media(max-width :1075px) {
     .content {
+        display: flex;
+        flex-direction: column; /* 세로 정렬 */
+        justify-content: center; /* 세로 가운데 정렬 */
+        align-items: center; /* 가로 가운데 정렬 */
+
+    }
+    .intro, .blog, .guestbook, .gallery {
+        width: 100%;
+    }
+}
+
+@media(max-width :600px) {
+    header{
+        margin-right: 0%;
+        margin-left: 0%;
+        padding: 0%;
+        justify-content: center;
+        align-items: center;
+    }
+    .sodebar{
         display: flex;
         flex-direction: column; /* 세로 정렬 */
         justify-content: center; /* 세로 가운데 정렬 */
