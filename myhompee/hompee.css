@@ -41,6 +41,10 @@ h1 {
     display: inline-block; /*텍스트가 가운데에 고정되도록 inline-block 추가*/
     
 }
+a{
+    color: #E65C50;
+    text-decoration: none;
+}
 
 .container {
     display: flex;
@@ -133,11 +137,30 @@ h2 {
 }
 
 .guestbook {
-    width: 250px; /* 방명록 너비 */
+    width: 40%; /* 방명록 너비 */
     background-color: #ffffff; /* 방명록 배경색 */
     border-radius: 10px; /* 둥근 모서리 */
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 방명록 그림자 */
+}
+
+.messages {
+    flex-grow: 1; /* 메시지 목록이 대부분 공간을 차지 */
+    overflow-y: auto; /* 스크롤 가능 */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* 안쪽 그림자 */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column-reverse; /* 채팅 메시지가 아래로 쌓이게 설정 */
+}
+
+.message {
+    background: #D3D3D3; /* 메시지 배경색 */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
 }
 
 form {
@@ -146,20 +169,24 @@ form {
 }
 
 form label {
-    margin: 10px 0 5px;
+    margin: 5px 0;
+    font-size: 0.9rem; /* 글씨 크기 줄이기 */
 }
 
 form input,
 form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 6px; /* 입력란 높이 줄이기 */
+    margin-bottom: 8px;
+    font-size: 0.85rem; /* 텍스트 크기 줄이기 */
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%; /* 입력란 너비 전체로 확장 */
 }
 
+/* 버튼 크기 및 디자인 */
 form button {
-    padding: 10px;
-    background: #FF6F61; /* 버튼 색상 */
+    padding: 8px; /* 버튼 크기 줄이기 */
+    background: #FF6F61;
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -168,7 +195,7 @@ form button {
 }
 
 form button:hover {
-    background: #E65C50; /* 버튼 호버 색상 */
+    background: #E65C50;
 }
 
 .gallery {
