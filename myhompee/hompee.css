@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* 밝은 배경색 */
+    color: #333; /* 어두운 글씨 색 */
+    line-height: 1.6;
+}
+
+
+header {
+
+    width: 800px;
+    /* text-align: center; 타이틀을 중앙 정렬 */
+    margin-top: 20px; 
+    margin-bottom: 20px; /*타이틀과 본문 사이 간격*/
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    justify-content: left;
+    margin-left: 0%;
+    padding-left: 20%;
+    margin-right: 0%;
+}
+
+h1 {
+    color: #E65C50;
+    font-size: 15px; /* 타이틀 크기 키우기 */
+    font-weight: bold;
+    margin: 0;
+    padding: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #ffffff;
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
+    display: inline-block; /*텍스트가 가운데에 고정되도록 inline-block 추가*/
+}
+
+.container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #ffffff; /* 사이드바 배경색 */
+    padding: 20px;
+    border-radius: 10px; /* 둥근 모서리 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 */
+    margin-left: 5%;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px; /* 둥근 모서리 */
+    background-color: #f9f9f9; /* 프로필 배경색 */
+    padding: 15px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    color: #FF6F61; /* 링크 색상 */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #E65C50; /* 링크 호버 색상 */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 25px;
+    max-width: 800px;
+    
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    
+}
+
+section {
+    background-color: #ffffff; /* 섹션 배경색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 섹션 그림자 */
+}
+
+h2 {
+    color: #FF6F61; /* 섹션 제목 색상 */
+    margin-bottom: 15px;
+}
+
+.intro, .blog {
+    width: calc(50% - 10px); /* 각 섹션 너비 */
+    margin-right: 15px;
+}
+
+.guestbook {
+    width: 250px; /* 방명록 너비 */
+    background-color: #ffffff; /* 방명록 배경색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 방명록 그림자 */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px;
+    background: #FF6F61; /* 버튼 색상 */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #E65C50; /* 버튼 호버 색상 */
+}
+
+.gallery {
+    background-color: #ffffff; /* 갤러리 배경색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 갤러리 그림자 */
+}
+
+.gallery-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery-container img {
+    width: calc(33.33% - 10px);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.messages {
+    margin-top: 20px;
+}
+
+.message {
+    background: #D3D3D3; /* 방명록 메시지 배경색 */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #FF6F61; /* 푸터 배경색 */
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media(max-width :1075px) {
+    .content {
+        display: flex;
+        flex-direction: column; /* 세로 정렬 */
+        justify-content: center; /* 세로 가운데 정렬 */
+        align-items: center; /* 가로 가운데 정렬 */
+
+    }
+    .intro, .blog, .guestbook, .gallery {
+        width: 100%;
+    }
+}

@@ -4,50 +4,27 @@
 <head>
     <title>WEB1 - CSS </title>
     <meta charset="utf-8">
-    <!-- <style>
-        body {
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 45px;
-            text-align: center;
-            border-bottom: 1px solid gray;
-            margin: 0;
-        }
-
-        ol {
-            border-right: 1px solid gray;
-            width: 150px;
-            margin: 0;
-            padding: 20px;
-        }
-
-        #grid {
-            display: grid;
-            grid-template-columns: 1fr 4fr;
-        }
-
-        @media(max-width: 800px) {
-            #grid {
-                display: block;
-            }
-            #grid ol {
-                border-right: none;
-            }
-
-            h1 {
-                border-bottom: none;
-            }
-            
-        }
-    </style> -->
-
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <h1><a href="index.html">WEB</a></h1>
+
+
+    <input type="button" value="night" onclick="
+    // 인풋타입은 버튼이고, 해당 버튼의 라벨 night이름이고, 클릭시 2줄의 코드 실행
+    document.querySelector('body').style.backgroundColor = 'black';
+    // document는 객체 .은 구분자 예> 키:값;
+    //querySelector 메서드(함수)
+    // body: 속성
+    //style:속성
+    document.querySelector('body').style.color = 'white';
+    ">
+
+    <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black';
+    ">
 
     <div id="grid">
 
