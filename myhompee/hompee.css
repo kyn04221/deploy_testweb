@@ -14,16 +14,17 @@ body {
 
 header {
     display: flex;
+    width: 970px;
     /* width: 800px; */
     /* text-align: center; 타이틀을 중앙 정렬 */
     margin-top: 20px; 
-    margin-bottom: 20px; /*타이틀과 본문 사이 간격*/
+    /* margin-bottom: 20px; 타이틀과 본문 사이 간격 */
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-left: 5%;
-    padding-left: 30px;
-    margin-right: 0%;
+    margin-left: 23%;
+    /* padding-left: %; */
+    margin-right: 20%;
 }
 
 h1 {
@@ -243,3 +244,14 @@ footer {
         width: 100%;
     }
 }
+
+/* @media(min-width :1075px) {
+    header{
+        max-width: 920px;
+        margin-right: 0%;
+        margin-left: 20%;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+} */
