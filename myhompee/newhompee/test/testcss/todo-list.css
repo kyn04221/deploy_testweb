@@ -1,0 +1,79 @@
+#container {
+    width: 600px;
+    margin: 10px auto;
+    /* justify-content: center;
+  align-items: center; */
+}
+
+/* fieldset 테두리선 */
+fieldset {
+    margin-bottom: 20px;
+    border-style: dashed;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 10px;
+}
+
+li label {
+    width: 30px;
+    line-height: 36px;
+    float: left;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 500px;
+    height: 30px;
+    border-style: none;
+}
+
+input[type="date"] {
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+form textarea {
+    border-style: none;
+    
+}
+
+form {
+    margin-bottom: 100px;
+}
+
+.style {
+    font-size: 20px;
+    text-shadow: 5px 5px 3px #ffa500;
+    letter-spacing: 0.2em
+}
+
+.back {
+    width: 100%;
+    /* background: blue;
+    border-radius:10px;
+    background: linear-gradient(to right bottom, #ffa500, white); */
+    text-align: center;
+
+}
+
+body {
+    background-image: url('고양이.jpeg');
+    /* 문서 전체 배경 이미지 */
+    background-repeat: no-repeat;
+    /* 배경 이미지 반복 안 함 */
+    background-position: right top;
+    /* 배경 이미지를 오른쪽 상단에 위치시킴 */
+    background-attachment: fixed;
+
+    /* width: 300px;
+    height: 200px; */
+    background-size: 200px 200px;
+    /* 배경 이미지를 너비 50%, 높이 50%로 줄임 */
+
+}
