@@ -39,7 +39,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: 60%;
+    width: 90%;
     /* 패딩마진x 선 끊김*/
   
   }
@@ -222,7 +222,7 @@ body {
     padding-top: 30px;
     padding-left: 0px;
     /* padding-right: 50px; */
-    margin-left: 50px;
+    margin-left: 250px;
     /* border-left: 2px solid #ccc; */
     max-width: 1040px;
     /* 최대 너비 설정 (원하는 크기로 조정 가능) */

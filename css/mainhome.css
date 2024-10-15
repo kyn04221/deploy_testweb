@@ -39,7 +39,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 60%;
+  width: 90%;
   /* 패딩마진x 선 끊김*/
 
 }
@@ -220,7 +220,7 @@ ul li {
   justify-content: left;
   /* 포스트 간의 간격을 자동으로 설정 */
   padding-top: 30px;
-  padding-left: 100px;
+  /* padding-left: 100px; */
   /* padding-right: 50px; */
   margin-left: 250px;
   /* border-left: 2px solid #ccc; */
