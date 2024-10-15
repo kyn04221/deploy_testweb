@@ -37,9 +37,9 @@ body {
   
   main {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: flex-start;
-    width: 90%;
+    width: 1425px;
     /* 패딩마진x 선 끊김*/
   
   }
@@ -214,7 +214,7 @@ body {
   
   .content {
     display: flex;
-    width: 1040px;
+    width: 944px;
     flex-wrap: wrap;
     /* 줄바꿈 가능하게 설정 */
     justify-content: left;
@@ -222,13 +222,16 @@ body {
     padding-top: 30px;
     padding-left: 0px;
     /* padding-right: 50px; */
-    margin-left: 250px;
+    margin-left: 50px;
     /* border-left: 2px solid #ccc; */
     max-width: 1040px;
     /* 최대 너비 설정 (원하는 크기로 조정 가능) */
     gap: 20px;
   
   }
+.contents{
+  width: 100%;
+}
   .all{
     width: 930px;
     font-size: 20px;

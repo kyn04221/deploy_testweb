@@ -39,7 +39,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 90%;
+  width: 1425px;
   /* 패딩마진x 선 끊김*/
 
 }
@@ -214,7 +214,7 @@ ul li {
 
 .content {
   display: flex;
-  width: 1040px;
+  width: 944px;
   flex-wrap: wrap;
   /* 줄바꿈 가능하게 설정 */
   justify-content: left;
